@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио</title>
+</head>
+<body>
+<h1>Портфолио</h1>
+{% for project in projects %}
+<p>{{ project.title }}</p>
+<p>{{ project.description }}</p>
+<img height="35%" width="35%" src="{{ project.image.url }}"><br>
+    {% if project.url %}
+        <a href="{{ project.url }}">Ссылка</a>
+    {% endif %}
+{% endfor %}
+</body>
+</html>
