@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Портфолио</title>
-</head>
-<body>
-<h1>Портфолио</h1>
+{% extends 'portfolio/base.html' %}
+{% block content %}
+    {% load static %}
+<div class="container text-center">
+<img src="{% static 'portfolio/PIXECT-20221113135447.jpg' %}">
+ </div>
 {% for project in projects %}
 <p>{{ project.title }}</p>
 <p>{{ project.description }}</p>
@@ -13,6 +11,7 @@
     {% if project.url %}
         <a href="{{ project.url }}">Ссылка</a>
     {% endif %}
+
 {% endfor %}
-</body>
-</html>
+
+{% endblock %}

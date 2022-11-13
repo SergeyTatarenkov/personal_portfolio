@@ -6,3 +6,6 @@ class Project(models.Model):
     description = models.CharField('Описание', max_length=250)
     image = models.ImageField('Загрузить изображение', upload_to='portfolio/images/')
     url = models.URLField('Ссылка', blank=True)
+
+    def __str__(self):
+        return self.title
